@@ -7,8 +7,8 @@ var firebaseConfig = {
   projectId: "crowd-checker-33624",
   storageBucket: "crowd-checker-33624.appspot.com",
   messagingSenderId: "119320500901",
-  appId: "1:119320500901:web:0fad4ba5d024b2c9948b4c",
-  measurementId: "G-3XT93RXQDV"
+  appId: "1:119320500901:web:4201b1547647bb03948b4c",
+  measurementId: "G-EFBRFTSJSV"
 };
 
 import { StyleSheet, Text, View, Image, TouchableHighlight, Button} from 'react-native';
