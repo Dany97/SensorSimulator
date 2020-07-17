@@ -47,7 +47,7 @@ function incrementAndStore(currentDate, currentTodayVisits){
       
         <TouchableHighlight style={styles.incrementButton}
           onPress = {() => {currentTodayVisits = incrementAndStore(currentDate, currentTodayVisits)}}>
-          <Text style={{fontSize: 20, position: 'relative', top:'30%', left: '2%'}}>
+          <Text style={{fontSize: 25, position: 'relative', top:'30%', left: '5%'}}>
             Click here to increment the number of visitors
           </Text>
         </TouchableHighlight>
@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
 
   incrementButton: {
     position: "relative",
-    top: '60%',
-    left: '6%',
-    width: "80%",
+    top: '70%',
+    left: '3.5%',
+    width: "85%",
     height: '20%',
     borderRadius: 15,
     borderColor: "black",

@@ -51,7 +51,7 @@ export default function App({navigation}) {
       <Stack.Screen 
         name="SensorSimulator" 
         component={Simulator} 
-        options={{ headerTitle: () => <CrowdCheckerTitleLogin /> }}
+        options={{ headerTitle: () => <CrowdCheckerTitleLogin2 /> }}
       />
       
     </Stack.Navigator>
@@ -61,12 +61,26 @@ export default function App({navigation}) {
 function CrowdCheckerTitleLogin(){
   return(
     <Text style={{
-      left: 95,
+      left: 75,
       fontSize: 30,
       color: 'green',
       fontFamily: 'sans-serif',
     }}>
-      Crowdchecker
+      SensorSimulator
+    </Text>
+  )
+}
+
+
+function CrowdCheckerTitleLogin2(){
+  return(
+    <Text style={{
+      left: 25,
+      fontSize: 30,
+      color: 'green',
+      fontFamily: 'sans-serif',
+    }}>
+      SensorSimulator
     </Text>
   )
 }
