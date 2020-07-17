@@ -32,21 +32,13 @@ function incrementAndStore(currentDate, currentTodayVisits){
       var currentTodayVisits = 0;
         var userRef = firebase.database().ref(firebase.auth().currentUser.uid).once('value', (snapshot) => {
         visits = snapshot.child('visits');
-        /*otherDaysVisits = new Array();
-        otherDays = new Array();
-        */
+        
         visits.forEach(function(visit) {
           var key = visit.key;
           if (key === currentDate){
             currentTodayVisits = visit.val();
           }
-          /*else{
-
-            otherDays.push(parseDate(visit.key));
-            otherDaysVisits.push(visit.val());
-
-          }
-          */
+          
        });
       });
     
