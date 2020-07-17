@@ -44,7 +44,7 @@ function incrementAndStore(currentDate, currentTodayVisits){
     
     return (
       <View style={{flex: 1, flexDirection:'row'}}> 
-      <Text>{currentTodayVisits}</Text>
+      
         <TouchableHighlight style={styles.incrementButton}
           onPress = {() => {currentTodayVisits = incrementAndStore(currentDate, currentTodayVisits)}}>
           <Text style={{fontSize: 20, position: 'relative', top:'30%', left: '2%'}}>
