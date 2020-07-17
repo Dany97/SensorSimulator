@@ -20,8 +20,9 @@ function parseDate(date){
 
 function incrementAndStore(currentDate, currentTodayVisits){
   currentTodayVisits += 1;
-  firebase.database().ref(firebase.auth().currentUser.uid + "/visits").set({
-    [currentDate] : currentTodatVisists 
+  firebase.database().ref(firebase.auth().currentUser.uid + "/visits").update({
+    [currentDate] : currentTodayVisits,
+    
   });
   return currentTodayVisits;
 };
@@ -31,11 +32,21 @@ function incrementAndStore(currentDate, currentTodayVisits){
       var currentTodayVisits = 0;
         var userRef = firebase.database().ref(firebase.auth().currentUser.uid).once('value', (snapshot) => {
         visits = snapshot.child('visits');
+        /*otherDaysVisits = new Array();
+        otherDays = new Array();
+        */
         visits.forEach(function(visit) {
           var key = visit.key;
           if (key === currentDate){
             currentTodayVisits = visit.val();
-        }
+          }
+          /*else{
+
+            otherDays.push(parseDate(visit.key));
+            otherDaysVisits.push(visit.val());
+
+          }
+          */
        });
       });
     
@@ -43,7 +54,7 @@ function incrementAndStore(currentDate, currentTodayVisits){
       <View style={{flex: 1, flexDirection:'row'}}> 
       <Text>{currentTodayVisits}</Text>
         <TouchableHighlight style={styles.incrementButton}
-          onPress = {currentTodayVisits = incrementAndStore(currentDate, currentTodayVisits)}>
+          onPress = {() => {currentTodayVisits = incrementAndStore(currentDate, currentTodayVisits)}}>
           <Text style={{fontSize: 20, position: 'relative', top:'30%', left: '2%'}}>
             Click here to increment the number of visitors
           </Text>
